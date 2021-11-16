@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Payoneer</string>
+    <string name="payments">Payments Methods</string>
+    <string name="something_went_wrong">Something went wrong. Please try again later.</string>
+    <string name="alert">Alert</string>
+    <string name="error_message">Sorry for the inconvenience!.. Please try again later.</string>
+    <string name="no_payment_methods">No payment methods</string>
+</resources>

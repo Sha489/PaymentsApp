@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:bind="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.app.payoneer.utils.BindingUtils" />
+
+        <variable
+            name="listener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.payments.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/backBtn"
+            android:visibility="gone"
+            android:onClick="@{listener::onClick}"
+            android:background="@drawable/ic_baseline_keyboard_backspace_24" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="@string/payments"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            fontPath="fonts/Montserrat-ExtraBold.ttf"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/shimmerLayout"
+        android:visibility="gone"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <include layout="@layout/layout_shimmer" />
+        <include layout="@layout/layout_shimmer" />
+        <include layout="@layout/layout_shimmer" />
+        <include layout="@layout/layout_shimmer" />
+        <include layout="@layout/layout_shimmer" />
+        <include layout="@layout/layout_shimmer" />
+        <include layout="@layout/layout_shimmer" />
+    </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/noData"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:text="@string/no_payment_methods"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recyclerView"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="30dp"/>
+
+    </FrameLayout>
+
+</LinearLayout>
+</layout>
